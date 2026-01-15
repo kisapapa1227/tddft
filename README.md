@@ -11,6 +11,12 @@
     1) 修飾する官能基を探す。データベースより官能基のリストを作成し、それらを SMILES で指定した分子骨格に修飾した候補物質を作成する(pre1)。
     2) 官能基の組み合わせを探す。複数の有効な官能基を、骨格となる分子の複数箇所に修飾した時の候補物質の吸収スペクトルを比較する(pre2)。
 
+conda create -n tddft-git python=3.12
+pip install numpy
+pip install matplot
 pip install pyscf
-pip install pypptx
+pip install geometric
+pip install python-pptx
+pip install rdkit Chart Sequence
+apt install imageMagick
 
