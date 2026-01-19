@@ -11,18 +11,16 @@
     1) 修飾する官能基を探す。データベースより官能基のリストを作成し、それらを SMILES で指定した分子骨格に修飾した候補物質を作成する(pre1)。
     2) 官能基の組み合わせを探す。複数の有効な官能基を、骨格となる分子の複数箇所に修飾した時の候補物質の吸収スペクトルを比較する(pre2)。
 
-
+```
 conda create -n tddft-git python=3.12
-pip install numpy
-pip install matplot
-pip install pyscf
-pip install geometric
-pip install python-pptx
-pip install rdkit Chart Sequence scikit-learn xgboost
+pip install numpy matplot pyscf geometric python-pptx rdkit Chart Sequence scikit-learn xgboost
 apt install imageMagick
+```
 
-python3.10 以降を利用する場合は、collections を利用しているファイルに関して下記の書き換えを行ってください。
+python3.10 以降を利用する場合は、collections を利用しているパッケージに関して、下記を参考にコードの書き換えを行ってください。
+```
 in envs/tddft-git/lib/python3.12/site-packages/pptx/chart/chart.py series.py
 from collection import Sequence -> from collection.abc import Sequence
+'''
 
 
