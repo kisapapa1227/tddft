@@ -105,7 +105,11 @@ ops:[100,700,601],0.60,4000
 ### 3.2 基底関数の比較
 <img width="1149" height="638" alt="image" src="https://github.com/user-attachments/assets/30843572-56af-4246-8610-cb9f4ca58943" />
 
-### 3.3 nstatの比較
+### 3.3 汎関数の比較
+<img width="1138" height="639" alt="image" src="https://github.com/user-attachments/assets/0449ae52-d05d-4e32-8e5c-3c3defb8d4f4" />
+<img width="1144" height="421" alt="image" src="https://github.com/user-attachments/assets/ad5c77ce-a87a-4e64-9701-ef3a704fbd55" />
+
+### 3.4 nstatの比較
 <img width="1137" height="636" alt="image" src="https://github.com/user-attachments/assets/1b057e2b-d9f3-4a9d-90a7-5cb823f40ea0" />
 <img width="1127" height="635" alt="image" src="https://github.com/user-attachments/assets/ae0982bf-124c-4ac0-8b66-2d3b708282c0" />
 
