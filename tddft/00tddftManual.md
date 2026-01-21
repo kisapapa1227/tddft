@@ -92,7 +92,7 @@ ops:[100,700,601],0.60,4000
 -stdev stdev:共振強度から吸収スペクトルを作成する時の分散に関連するパラメータを指定します。デフォルト値は4000です。 
 -o outputFileName:出力するファイル名を指定します。デフォルトは、uv_all.xlsxです。
 ```
--o オプションで、存在する出力ファイルを指定すると、追記します。
+-o オプションで、存在するファイルを指定すると、追記します。
 
 <img width="1960" height="787" alt="image" src="https://github.com/user-attachments/assets/fc7c0fa5-18f7-4f93-902f-b730649be558" />
 
@@ -106,8 +106,7 @@ ops:[100,700,601],0.60,4000
 <img width="1149" height="638" alt="image" src="https://github.com/user-attachments/assets/30843572-56af-4246-8610-cb9f4ca58943" />
 
 ### 3.3 汎関数の比較
-<img width="1138" height="639" alt="image" src="https://github.com/user-attachments/assets/0449ae52-d05d-4e32-8e5c-3c3defb8d4f4" />
-<img width="1144" height="421" alt="image" src="https://github.com/user-attachments/assets/ad5c77ce-a87a-4e64-9701-ef3a704fbd55" />
+<img width="1153" height="657" alt="image" src="https://github.com/user-attachments/assets/1eebd96b-28ef-4f2f-86ca-5f8a971369e8" />
 
 ### 3.4 nstatの比較
 <img width="1137" height="636" alt="image" src="https://github.com/user-attachments/assets/1b057e2b-d9f3-4a9d-90a7-5cb823f40ea0" />
