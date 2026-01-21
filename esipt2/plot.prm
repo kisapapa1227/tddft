@@ -1,0 +1,3 @@
+files:AAP_01,AAP_pyscf2.11_Numpy1.26.4,AAP_pyscf2.11_Numpy2.0.0,AAP_pyscf2.8_Numpy1.26.4
+output:plot_all
+ops:[100,600,501],1.2,4000

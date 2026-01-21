@@ -1,0 +1,2 @@
+$freeze
+distance 10 19
