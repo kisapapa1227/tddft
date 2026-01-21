@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+#
+fn=molecularBackbone.smi
+for star in furan-000 furan-001 furan-002 furan-003 furan-004 furan-005 furan-006 furan-007 furan-008 furan-009 furan-010 furan-011 furan-012 furan-013 furan-014 furan-015 furan-016 furan-017 furan-018 furan-019 furan-020 furan-021 furan-022 furan-023 furan-024 furan-025 furan-026 furan-027 furan-028 furan-029 furan-030 furan-031 furan-032 furan-033 furan-034 furan-035 furan-036 furan-037 furan-038 furan-039 furan-040 furan-041 furan-042 furan-043 furan-044 furan-045 furan-046 furan-047 furan-048;do
+	x=$(cat $fn | grep $star )
+echo "#!/bin/sh" > run.sh
+echo "#" >> run.sh
+echo "#" >> run.sh
+
+echo python3 ../bin/tddftSolver.py $x >> run.sh
+sh run.sh
+done
