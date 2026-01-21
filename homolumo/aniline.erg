@@ -1,0 +1,12 @@
+c1ccccc1N
+seed=1235,True,
+basis=6311g
+xc=CAMB3LYP
+spin=0
+
+HOMO Energy: -6.804388 eV
+LUMO Energy: 1.264988 eV
+LUMO+1 Energy: 1.813102 eV
+PCM : chloroform
+
+20260113 17:51:08-20260113 17:54:38-->3
