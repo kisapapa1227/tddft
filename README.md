@@ -13,7 +13,7 @@
 
 ```
 conda create -n tddft-git python=3.12
-pip install pyscf numpy matplot geometric python-pptx rdkit Chart Sequence scikit-learn xgboost
+pip install pyscf==3.11.0 numpy==2.4.0 matplot geometric python-pptx rdkit Chart Sequence scikit-learn xgboost
 apt install imageMagick
 ```
 
