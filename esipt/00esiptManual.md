@@ -80,7 +80,10 @@ rotate:240.0 # 回転させる。
 
 ![AAP_esipt_cb](https://github.com/user-attachments/assets/1d6d4072-b1af-424a-adf3-a33c6d16a2e6)
 
-ここの先の処理では、esipt2 のデータも利用します。
+
+ディレクトリー esipt2 では、H(#3)とN(#10)の距離を拘束条件とします。
+
+![AAP_esipt2_cb](https://github.com/user-attachments/assets/52aa8290-cb66-4c8e-b8d5-f1190dbbf53c)
 
 次に、基底状態のエネルギーをグラフ化します。
 パラメタファイルを準備します。
@@ -89,13 +92,16 @@ rotate:240.0 # 回転させる。
 files:../esipt/AAP,../esipt2/AAP
 label:'O H','N-H'
 output:AAP_erg
-ops:[0.9,2.1],100
+ops:[0.9,2.1],60
 ```
 
 ポテンシャルエネルギーをグラフ化します。
 ```
 >> python3 ../bin/esiptErgPlot.py plotEnergy.prm
 ```
+
+
+<img width="640" height="480" alt="AAP_erg" src="https://github.com/user-attachments/assets/ee166833-66bb-42d6-bb60-18bb2707a63c" />
 
 ### 二面角で指定する
 
@@ -117,6 +123,5 @@ ops:[0.9,2.1],100
 
 ### 補足
 
-<img width="1065" height="559" alt="image" src="https://github.com/user-attachments/assets/31699d17-2d2e-487b-808a-ad6cf3a0c8a4" />
-
+<img width="1128" height="634" alt="image" src="https://github.com/user-attachments/assets/ed372cba-2338-44d4-9ee1-410303399878" />
 
