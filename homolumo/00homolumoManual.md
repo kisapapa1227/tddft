@@ -16,13 +16,13 @@
 
 例えば、methanol 相当にしたい場合は 
 ```
->>python3 ../bin/getHomoLumo.py aniline ‘c1ccccc1N’　-eps 32.613 
+>>python3 ../bin/getHomoLumo.py aniline ‘c1ccccc1N’ -eps 32.613 
 ```
 と、オプションで指定してください。 
 
 あるいは、溶媒モデルを利用したくない場合は、 
 ```
->>python3 ../bin/getHomoLumo.py aniline ‘c1ccccc1N’　-wo 
+>>python3 ../bin/getHomoLumo.py aniline ‘c1ccccc1N’ -wo 
 ```
 -wo をオプションを着けてください。 
 
