@@ -13,7 +13,7 @@
 
 ```
 conda create -n tddft-git python=3.12
-pip install numpy matplot pyscf geometric python-pptx rdkit Chart Sequence scikit-learn xgboost
+pip install pyscf numpy matplot geometric python-pptx rdkit Chart Sequence scikit-learn xgboost
 apt install imageMagick
 ```
 
@@ -23,4 +23,5 @@ in envs/tddft-git/lib/python3.12/site-packages/pptx/chart/chart.py series.py
 from collection import Sequence -> from collection.abc import Sequence
 '''
 
+対象物質(SMILES)により、numpyのバージョンにより行列演算でエラーがでることがあります。mumpy 1.26.4 などの古いバージョンを使うと解決するようです。
 
