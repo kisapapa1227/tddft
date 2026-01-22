@@ -1,0 +1,4 @@
+files:
+output:plot_all
+smiles:all.prm
+ops:[100,600,501],1.2,4000

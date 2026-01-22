@@ -1,0 +1,5 @@
+substance_0403_4
+16,20,26
+flip:False
+rotate:240.0
+scale:40

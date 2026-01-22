@@ -1,0 +1,5 @@
+files:substance_0403_4
+label:substance_0403
+output:substance_0403_erg
+ops:[-140,210],20
+axis:dihedral angle(deg)
