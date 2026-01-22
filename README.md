@@ -11,6 +11,8 @@
     1) 修飾する官能基を探す。データベースより官能基のリストを作成し、それらを SMILES で指定した分子骨格に修飾した候補物質を作成する(prepareCandidateA)。
     2) 官能基の組み合わせを探す。複数の有効な官能基を、骨格となる分子の複数箇所に修飾した時の候補物質の吸収スペクトルを比較する(prepareCandidateB)。
 
+
+動作確認環境
 ```
 conda create -n tddft-git python=3.12
 pip install pyscf==3.11.0 numpy==2.4.0 matplot geometric python-pptx rdkit Chart Sequence scikit-learn xgboost
@@ -23,5 +25,5 @@ in envs/tddft-git/lib/python3.12/site-packages/pptx/chart/chart.py series.py
 from collection import Sequence -> from collection.abc import Sequence
 '''
 
-対象物質(SMILES)により、numpyのバージョンにより行列演算でエラーがでることがあります。mumpy 1.26.4 などの古いバージョンを使うと解決するようです。
+対象物質により、numpyの行列演算でエラーが出ることがあります。mumpy 1.26.4 などの古いバージョンを使うと解決する場合があります。
 
