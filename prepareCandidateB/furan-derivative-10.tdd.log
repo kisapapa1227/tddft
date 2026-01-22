@@ -1,0 +1,23 @@
+Start
+mf.converged at 1 loop
+HOMO Energy: -8.918125 eV
+LUMO Energy: -2.108353 eV
+LUMO+1 Energy: -0.398882 eV
+tddft statt
+mytd.init_guess error: never mind
+mytd.kernel: start 1
+number of converged points in loop 1: 24
+362.95:0.000
+312.82:0.000
+287.73:0.319
+258.63:0.000
+232.13:0.125
+220.67:0.006
+215.21:0.315
+188.03:0.000
+181.71:0.023
+176.59:0.065
+169.25:0.005
+159.06:0.035
+153.54:0.169
+146.21:0.000
