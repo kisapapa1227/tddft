@@ -70,13 +70,17 @@ furan-derivative-04 'CCCCOc1coc(C(=O)O)c1[N+](=O)[O-]’
 
 ディレクトリー　prepareCandidateA と同じ手順です。
 候補物質を一括処理するための実行スクリプトを作ります。
+
+ただし、この候補物質(furanDerivative.smi)の多くは、numpy>1.26.4 では計算できません(optimizerでエラーが出る)。pip install numpy==1.26.4で、実行してください。
+
 ```
->>python3 ../bin/mkScript.py molecularBackbone.smi > runAll.sh
+>>python3 ../bin/mkScript.py furanDerivative.smi > runAll.sh
 ```
 スクリプトを実行します。
 ```
 >>sh runAll.sh
 ```
+
 
 解析結果の可視化を行います。
 結果が得られた条件を表示するためのパラメータファイルを作成します。
