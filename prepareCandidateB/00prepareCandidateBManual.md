@@ -20,13 +20,16 @@ N,S(=O)(=O)N,ON(=O)(=O) # :4に結合する官能基
 候補物質を作成します。
 ```
 >>python3 ../bin/mkCandidatesWithSpecifiedSideChains.py chalconeDerivative.prm
+```
+
+chalconeDerivative.smi に書き込みます。 確認用の画像ファイルも作成されます。
+
+```
 >>cat chalconeDerivative.smi
 chalcone-derivative-01010101 'O=C(C=Cc1ccccc1)c1ccccc1O'
 chalcone-derivative-02020202 'Nc1ccc(C=CC(=O)c2ccccc2O)c(N)c1N’
 ...
 ```
-
-chalconeDerivative.smi に書き込みます。 確認用の画像ファイルも作成されます。
 
 修飾する官能基の一覧
 
@@ -68,10 +71,11 @@ furan-derivative-04 'CCCCOc1coc(C(=O)O)c1[N+](=O)[O-]’
 
 ### 3. 候補物質の一括処理
 
-ディレクトリー　prepareCandidateA と同じ手順です。
+手順は prepareCandidateA と同一です。
+
 候補物質を一括処理するための実行スクリプトを作ります。
 
-ただし、この候補物質(furanDerivative.smi)の多くは、numpy>1.26.4 では計算できません(optimizerでエラーが出る)。pip install numpy==1.26.4で、実行してください。
+ただし、この候補物質(furanDerivative.smi)の多くは numpy>1.26.4 で、コード内の optimizerでエラーが出ます。numpy==1.26.4での動作は確認済みです。
 
 ```
 >>python3 ../bin/mkScript.py furanDerivative.smi > runAll.sh
@@ -88,10 +92,10 @@ furan-derivative-04 'CCCCOc1coc(C(=O)O)c1[N+](=O)[O-]’
 >> sh ../bin/mkPrmForTdds2svg.sh > plot.prm
 ```
 
-下記の例では、波長250nm 以上に有効な吸収ピークを持つ物質を選別します。ここでは、有効な吸収ピークは他の吸収ピークの10%以上としています。
+下記の例では、波長250nm 以上に有効な吸収ピークを持つ物質を選別します。ここでは、有効な吸収ピークは縦軸を正規化した時に0.1以上としています。
 ```
 >> python3 ../bin/makeTddftReport.py plot.prm -up 250 r 0.1 -num 6 -N
-``
+```
 uv_prepareCandidateB_plot_all.pptx が作られます。
 オプションを付けなければ、全候補物資のスペクトルが表示されます。
 
