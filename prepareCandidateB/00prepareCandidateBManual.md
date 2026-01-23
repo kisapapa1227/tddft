@@ -1,31 +1,34 @@
 ### 概要
 骨格分子に複数の側鎖を追加して、候補物質を作成します。
 
-計算コードは bin にあるので、相対位置は読み替えてください。
+- 計算コードは bin にあります。パスは環境に合わせて読み替えてください。
+- 分子骨格、修飾する官能基、修飾する場所を指定して、候補物質を作成します。
 
 ### 1. 候補物質の生成（組み合わせ）
 
 分子骨格、修飾する部位、官能基を設定するファイルを準備します。修飾箇所と官能基の記述行数が同じ場合は、数学で言う、組み合わせで分子骨格に修飾します。
 ```
 >>cat chalconeDerivative.prm
-chalcone-derivative- #出力ファイル内の候補物質の頭文字
-c1ccccc1-C=CC(=O)-c2ccccc(O)2 # 骨格分子のSMILES構造式
+chalcone-derivative-          #出力ファイル内の候補物質の頭文字
+c1ccccc1-C=CC(=O)-c2ccccc(O)2 # 骨格分子のSMARTS/SMILES構造式
 c1c([*:1])c([*:2])c([*:3])c([*:4])c1-C=CC(=O)-c2ccccc(O)2 # 官能基で修飾する部位
-H,N,S(=O)(=O) # :1に結合する官能基
-N,S(=O)(=O) # :2に結合する官能基
-N,S(=O)(=O) # :3に結合する官能基
-N,S(=O)(=O)N,ON(=O)(=O) # :4に結合する官能基
+H,N,S(=O)(=O)                 # :1に結合する官能基
+N,S(=O)(=O)                   # :2に結合する官能基
+N,S(=O)(=O)                   # :3に結合する官能基
+N,S(=O)(=O)N,ON(=O)(=O)       # :4に結合する官能基
 ```
 
-候補物質を作成します。
+下記コマンドで候補物質を作成します。
 ```
->>python3 ../bin/mkCandidatesWithSpecifiedSideChains.py chalconeDerivative.prm
+python3 ../bin/mkCandidatesWithSpecifiedSideChains.py chalconeDerivative.prm
 ```
+- 候補物質はchalconeDerivative.smi に書き出されます。
+- 確認用の画像ファイルも作成されます。
 
-chalconeDerivative.smi に書き込みます。 確認用の画像ファイルも作成されます。
 
+例：
 ```
->>cat chalconeDerivative.smi
+#ファイル chalconeDerivative.smi
 chalcone-derivative-01010101 'O=C(C=Cc1ccccc1)c1ccccc1O'
 chalcone-derivative-02020202 'Nc1ccc(C=CC(=O)c2ccccc2O)c(N)c1N’
 ...
@@ -43,17 +46,17 @@ chalcone-derivative-02020202 'Nc1ccc(C=CC(=O)c2ccccc2O)c(N)c1N’
 
 分子骨格、修飾する部位、官能基を設定するファイルを準備します。官能基の記述が一行の場合は、数学で言う、順列で分子骨格を修飾します。
 ```
->>cat furanDerivative.prm
-furan-derivative- #出力ファイル内の候補物質の頭文字
-c1occc1 # 骨格分子のSMILES構造式
+# ファイル furanDerivative.prm
+furan-derivative-                   # 出力ファイル内の候補物質の頭文字
+c1occc1                             # 骨格分子のSMILES構造式
 c1([*:4])oc([*:1])c([*:2])c1([*:3]) # 官能基で修飾する部位
-H,N(=O)=O,OCCCC,C(=O)O #修飾する官能基
+H,N(=O)=O,OCCCC,C(=O)O              # 修飾する官能基
 ```
 
-候補物質を作成します。
+下記コマンドで候補物質を作成します。
 ```
->>python3 ../bin/mkCandidatesWithSpecifiedSideChains.py franDerivative.prm
->>cat franDerivative.smi
+python3 ../bin/mkCandidatesWithSpecifiedSideChains.py franDerivative.prm
+# ファイル franDerivative.smi
 furan-derivative-01 'c1ccoc1'
 furan-derivative-02 'CCCCOc1c([N+](=O)[O-])coc1C(=O)O'
 furan-derivative-03 'CCCCOc1occ([N+](=O)[O-])c1C(=O)O'
@@ -73,33 +76,38 @@ furan-derivative-04 'CCCCOc1coc(C(=O)O)c1[N+](=O)[O-]’
 
 手順は prepareCandidateA と同一です。
 
-候補物質を一括処理するための実行スクリプトを作ります。
+3.1 候補物質一覧から実行スクリプトを作ります。
 
-ただし、この候補物質(furanDerivative.smi)の多くは numpy>1.26.4 で、コード内の optimizerでエラーが出ます。numpy==1.26.4での動作は確認済みです。
+ただし、この候補物質(furanDerivative.smi)の多くは numpy>1.26.4 で、コード内の optimizerでエラーが出ます。numpy==1.26.4で試してください。
 
 ```
->>python3 ../bin/mkScript.py furanDerivative.smi > runAll.sh
+python3 ../bin/mkScript.py furanDerivative.smi > runAll.sh
 ```
-スクリプトを実行します。
+3.2 生成されたスクリプトを実行します。
 ```
->>sh runAll.sh
+sh runAll.sh
 ```
 
 
 解析結果の可視化を行います。
-結果が得られた条件を表示するためのパラメータファイルを作成します。
+
+3.3 解析結果の可視化用パラメータファイルを作成します。
 ```
->> sh ../bin/mkPrmForTdds2svg.sh > plot.prm
+sh ../bin/mkPrmForTdds2svg.sh > plot.prm
 ```
 
-下記の例では、波長250nm 以上に有効な吸収ピークを持つ物質を選別します。ここでは、有効な吸収ピークは縦軸を正規化した時に0.1以上としています。
+有効な吸収ピークを持つ物質のみを抽出してレポートを作成します。以下は、波長 250 nm 以上で正規化時のピーク高さが 0.1 以上のものを選別する例です。
 ```
->> python3 ../bin/makeTddftReport.py plot.prm -up 250 r 0.1 -num 6 -N
+python3 ../bin/makeTddftReport.py plot.prm -up 250 r 0.1 -num 6 -N
 ```
-uv_prepareCandidateB_plot_all.pptx が作られます。
-オプションを付けなければ、全候補物資のスペクトルが表示されます。
+- 上記コマンドでuv_prepareCandidateB_plot_all.pptx が作られます。
 
+(出力イメージ)
 <img width="970" height="683" alt="image" src="https://github.com/user-attachments/assets/d5bc38ca-6eda-4ceb-a57a-72fe763cb178" />
 
-各々のパラメータファイルはエディターで編集可能なので、必要な場合は、ディレクトリー tddft　内のマニュアルを参照に修正してください。
+-オプションを付けなければ、全候補物資のスペクトルが表示されます。
 
+### 補足
+- 各パラメータファイルはテキストエディタで編集が可能です。必要に応じてパラメータを調整してください。
+- 詳細は tddft ディレクトリ内のマニュアルを参照してください。
+- 実行コマンドやパスは環境によって異なるため、スクリプト実行前に bin/ への参照や Python 環境を確認してください。
