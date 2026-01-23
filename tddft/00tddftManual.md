@@ -8,10 +8,10 @@ SMILES記法で記述した物質の吸収スペクトルを量子化学計算�
 
 計算は下記コマンドで行います。
 ```
->>python3 ../bin/tddftSolver.py Indigo_pcm ‘C1=CC=C2C(=C1)C(=C(N2)C3=NC4=CC=CC=C4C3=O)O’
+python3 ../bin/tddftSolver.py Indigo_pcm ‘C1=CC=C2C(=C1)C(=C(N2)C3=NC4=CC=CC=C4C3=O)O’
 ```
 - 第一引数：物質名（出力ファイル名）
-- 第二引数：対象物質のSMILES構造式
+- 第二引数：対象物質のSMILES構造式(クォートで囲む)
 
 解析結果は、物質名.tdd に保存されます。
 
@@ -19,17 +19,17 @@ SMILES記法で記述した物質の吸収スペクトルを量子化学計算�
 
 methanol 相当の誘電率（ε=4.7113)に変更する例： 
 ```
->>python3 ../bin/tddftSolver.py Indigo 'C1=CC=C2C(=C1)C(=C(N2)C3=NC4=CC=CC=C4C3=O)O' -eps 32.613
+python3 ../bin/tddftSolver.py Indigo 'C1=CC=C2C(=C1)C(=C(N2)C3=NC4=CC=CC=C4C3=O)O' -eps 32.613
 ```
 
 溶媒モデルを利用しない場合は -wo オプションを付けます。 
 ```
->>python3 ../bin/tddftSolver.py Indigo 'C1=CC=C2C(=C1)C(=C(N2)C3=NC4=CC=CC=C4C3=O)O' -wo 
+python3 ../bin/tddftSolver.py Indigo 'C1=CC=C2C(=C1)C(=C(N2)C3=NC4=CC=CC=C4C3=O)O' -wo 
 ```
 
 ###  オプションの説明
 ```
->>python3 ../bin/tddftSolver.py Indigo_pcm ‘C1=CC=C2C(=C1)C(=C(N2)C3=NC4=CC=CC=C4C3=O)O’  options
+python3 ../bin/tddftSolver.py Indigo_pcm ‘C1=CC=C2C(=C1)C(=C(N2)C3=NC4=CC=CC=C4C3=O)O’  options
 -mc max_cycle :収束計算の最大反復回数を指定する。
 -bs 6311g :基底関数を指定する。
 -xc CAMB3LYP :汎関数を指定する。 
@@ -44,7 +44,7 @@ methanol 相当の誘電率（ε=4.7113)に変更する例：
 ### 2.1 パワーポイントレポートの作成
 - プロット設定ファイルを生成
 ```
->>python3 ../bin/preparePlotParameterFile.py > plot.prm
+python3 ../bin/preparePlotParameterFile.py > plot.prm
 ```
 カレントディレクトリーに存在する .tdd ファイルが対象になります。
 
@@ -63,7 +63,7 @@ ops:[100,700,601],0.60,4000
 
 PowerPointを作成:
 ```
->> python3 ../bin/makeTddftReport.py plot.prm
+ python3 ../bin/makeTddftReport.py plot.prm
 ```
 
 <img width="1130" height="626" alt="image" src="https://github.com/user-attachments/assets/44e127cd-d533-4b3b-ab9d-b4c3f71a4631" />
@@ -82,7 +82,7 @@ PowerPointを作成:
 ### 2.2 Excel レポートの作成
 実行例：
 ```
->> python3 ../bin/makeTddft2Excel.py –d .
+ python3 ../bin/makeTddft2Excel.py –d .
 ```
 ### オプション
 
