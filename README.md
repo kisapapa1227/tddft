@@ -17,7 +17,7 @@
 動作確認環境（例）
 
 - conda create -n tddft-git python=3.12
-- pip install pyscf==3.11.0 numpy==2.3.0 matplotlib geometric python-pptx rdkit Chart Sequence scikit-learn xgboost (numpy 2.4.0 では動きません)
+- pip install pyscf==3.11.0 numpy==1.26.4 matplotlib geometric python-pptx rdkit Chart Sequence scikit-learn xgboost
 - apt install ImageMagick
 
 Python 3.10 以降を使用する場合の注意
@@ -37,5 +37,5 @@ from collections.abc import Sequence
 
 補足（トラブルシューティング）
 
-- 対象物質や計算条件によっては、NumPy の行列演算でエラーが出ることがあります。その場合、古いバージョンの NumPy（例：numpy 1.26.4 など）へ戻すことで解決することがあるため、バージョンを切り替えて試してください。
+- 対象物質や計算条件によって、NumPy > 1.26.4 を利用した場合、エラーが出ることを確認しています。その場合、古いバージョンの NumPy（例：NumPy 1.26.4 など）へ戻すことで解決することがあるため、バージョンを切り替えて試してください。
 
