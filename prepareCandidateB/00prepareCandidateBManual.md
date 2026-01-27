@@ -1,14 +1,15 @@
 ### 概要
-骨格分子に複数の側鎖を追加して、候補物質を作成します。
 
-- 計算コードは bin にあります。パスは環境に合わせて読み替えてください。
-- 分子骨格、修飾する官能基、修飾する場所を指定して、候補物質を作成します。
+- 骨格となる分子、修飾する官能基、修飾する場所を指定して、候補物質を作成します。
+計算コードは bin にあります。パスは環境に合わせて読み替えてください。
 
 ### 1. 候補物質の生成（組み合わせ）
 
 分子骨格、修飾する部位、官能基を設定するファイルを準備します。修飾箇所と官能基の記述行数が同じ場合は、数学で言う、組み合わせで分子骨格に修飾します。
+
+例
 ```
->>cat chalconeDerivative.prm
+# ファイル chalconeDerivative.prm
 chalcone-derivative-          #出力ファイル内の候補物質の頭文字
 c1ccccc1-C=CC(=O)-c2ccccc(O)2 # 骨格分子のSMARTS/SMILES構造式
 c1c([*:1])c([*:2])c([*:3])c([*:4])c1-C=CC(=O)-c2ccccc(O)2 # 官能基で修飾する部位
@@ -26,7 +27,7 @@ python3 ../bin/mkCandidatesWithSpecifiedSideChains.py chalconeDerivative.prm
 - 確認用の画像ファイルも作成されます。
 
 
-例：
+例
 ```
 #ファイル chalconeDerivative.smi
 chalcone-derivative-01010101 'O=C(C=Cc1ccccc1)c1ccccc1O'
@@ -46,6 +47,7 @@ chalcone-derivative-02020202 'Nc1ccc(C=CC(=O)c2ccccc2O)c(N)c1N’
 
 分子骨格、修飾する部位、官能基を設定するファイルを準備します。官能基の記述が一行の場合は、数学で言う、順列で分子骨格を修飾します。
 ```
+例
 # ファイル furanDerivative.prm
 furan-derivative-                   # 出力ファイル内の候補物質の頭文字
 c1occc1                             # 骨格分子のSMILES構造式
@@ -56,7 +58,7 @@ H,N(=O)=O,OCCCC,C(=O)O              # 修飾する官能基
 下記コマンドで候補物質を作成します。
 ```
 python3 ../bin/mkCandidatesWithSpecifiedSideChains.py franDerivative.prm
-# ファイル franDerivative.smi
+# 出力ファイル franDerivative.smi
 furan-derivative-01 'c1ccoc1'
 furan-derivative-02 'CCCCOc1c([N+](=O)[O-])coc1C(=O)O'
 furan-derivative-03 'CCCCOc1occ([N+](=O)[O-])c1C(=O)O'
