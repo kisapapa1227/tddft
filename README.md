@@ -17,7 +17,7 @@
 動作確認環境（例）
 
 - conda create -n tddft-git python=3.12
-- pip install pyscf==3.11.0 numpy==2.3.0 matplotlib geometric python-pptx rdkit Chart Sequence scikit-learn xgboost (numpy 2.4.0 では)
+- pip install pyscf==3.11.0 numpy==2.3.0 matplotlib geometric python-pptx rdkit Chart Sequence scikit-learn xgboost (numpy 2.4.0 では動きません)
 - apt install ImageMagick
 
 Python 3.10 以降を使用する場合の注意
