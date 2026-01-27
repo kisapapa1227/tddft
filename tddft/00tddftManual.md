@@ -48,9 +48,9 @@ python3 ../bin/preparePlotParameterFile.py > plot.prm
 ```
 カレントディレクトリーに存在する .tdd ファイルが対象になります。
 
-例：
-- ファイル plot.prm
+例
 ```
+# ファイル plot.prm
 files:Indigo_pcm,Indigo
 output:all
 ops:[100,700,601],0.60,4000
