@@ -45,7 +45,7 @@ python3 ../bin/getHomoLumo.py aniline ‘c1ccccc1N’ -wo
 ```
 jupyter lab
 ```
-- ブラウザーでhttp://127.0.0.1:888/labにアクセスする。
+- ブラウザーでhttp://127.0.0.1:8888/labにアクセスする。
 - メニューから File → Open From Path を選び、bin/showHomoLumo.ipynb を読み込みます。
 - ノートブック中のセルを順に実行します（パッケージのインストールセルと解析用コードセルの2箇所）。
 - ファイル選択ダイアログが出たら、物質名_ext_mf.pkl を選択して読み込みます。
